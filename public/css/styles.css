@@ -1,0 +1,3 @@
+.pagination_index nav>div{
+    flex-direction: column-reverse;
+}
