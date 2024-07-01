@@ -1,29 +1,14 @@
-#!/bin/bash
+#!/bin/sh
+# Update this script according to the needs of your Laravel app
 
-# Update package list and install necessary libraries
-apt-get update && apt-get install -y libssl-dev curl
-
-# Debugging lines
-echo "Installing Composer"
-curl -sS https://getcomposer.org/installer | php
-php composer.phar install --no-dev --optimize-autoloader
-
-# Debugging lines
-echo "Running NPM Install"
+# Install dependencies
 npm install
+# Make sure webpack is available
+npm install webpack --save-dev
 
-# Install Laravel Mix globally if necessary
-npm install -g laravel-mix
+# Run Laravel Mix
+npm run prod
 
-# Debugging lines
-echo "Building assets"
-npm run production
-
-# Moving built assets
-echo "Moving built assets"
-cp -r public/* /vercel/path0/public
-
-# Copying other necessary files
-echo "Copying .env and vendor"
-cp .env /vercel/path0/.env
-cp -r vendor /vercel/path0/vendor
+# Copy necessary files
+cp .env.example .env
+php artisan key:generate
