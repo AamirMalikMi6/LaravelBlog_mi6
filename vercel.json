@@ -2,8 +2,9 @@
   "version": 2,
   "builds": [
     {
-      "src": "Dockerfile",
-      "use": "@vercel/docker"
+      "src": "vercel.sh",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "public" }
     }
   ],
   "routes": [
