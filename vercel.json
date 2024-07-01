@@ -2,17 +2,17 @@
   "version": 2,
   "builds": [
     {
-      "src": "public/index.php",
+      "src": "frontend/**/*",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "public"
+        "distDir": "api/index.php"
       }
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/public/index.php"
+      "dest": "api/index.php"
     }
   ]
 }
