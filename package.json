@@ -9,8 +9,8 @@
           "hot": "mix watch --hot",
           "prod": "npm run production",
           "production": "mix --production",
-          "build": "npm run build",
-        "start": "npm start"
+          "build": "npm run production",
+        "start": "php artisan serve"
         },
     "devDependencies": {
         "@popperjs/core": "^2.11.6",
