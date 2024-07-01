@@ -1,6 +1,10 @@
 #!/bin/bash
 
 # Debugging lines
+echo "Installing PHP"
+apt-get update && apt-get install -y php
+
+# Debugging lines
 echo "Installing Composer"
 curl -sS https://getcomposer.org/installer | php
 php composer.phar install --no-dev --optimize-autoloader
