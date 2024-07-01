@@ -1,8 +1,7 @@
 #!/bin/bash
 
-# Debugging lines
-echo "Installing PHP"
-apt-get update && apt-get install -y php
+# Update package list and install necessary libraries
+apt-get update && apt-get install -y libssl-dev curl
 
 # Debugging lines
 echo "Installing Composer"
@@ -13,7 +12,7 @@ php composer.phar install --no-dev --optimize-autoloader
 echo "Running NPM Install"
 npm install
 
-# Install Laravel Mix globally
+# Install Laravel Mix globally if necessary
 npm install -g laravel-mix
 
 # Debugging lines
